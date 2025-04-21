@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)file:///C:/Users/samru/Downloads/Index.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samruddhi's Portfolio</title>
+  <link href="./Index_files/css2" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #16213e);
+      color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      padding: 40px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    header h1 {
+      font-size: 3em;
+      background: linear-gradient(90deg, #00ffd5, #ff61f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShift 5s infinite alternate ease-in-out;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0%; }
+      100% { background-position: 100%; }
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #0f0f1a;
+      padding: 15px;
+      gap: 25px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #80d0c7;
+      font-size: 1.1em;
+      transition: color 0.3s, transform 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover {
+      color: #f9f871;
+      transform: scale(1.1);
+    }
+
+    nav a.active {
+      color: #f9f871;
+      font-weight: bold;
+      text-shadow: 0 0 8px #f9f871;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    section {
+      display: none;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .welcome-center {
+      text-align: center;
+      font-size: 2.2em;
+      color: #00ffd5;
+      font-weight: bold;
+      margin: 30px 0 10px;
+    }
+
+    .typing-text {
+      font-size: 1.5em;
+      color: #ffffff;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+      height: 2em;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: .15em solid #00ffd5;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #00ffd5; }
+    }
+
+    section h2 {
+      color: #ff61f6;
+      font-size: 2em;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 20px;
+    }
+
+    li {
+      cursor: pointer;
+      color: #8571f9;
+      font-weight: bold;
+      margin-bottom: 10px;
+      transition: all 0.3s;
+    }
+
+    li:hover {
+      text-decoration: underline;
+      color: #ffdd57;
+    }
+
+    .certificate-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .certificate-card img {
+      width: 250px;
+      border-radius: 10px;
+      transition: transform 0.3s;
+    }
+
+    .certificate-card img:hover {
+      transform: scale(1.05);
+    }
+
+    .contact-info {
+      text-align: left;
+      max-width: 600px;
+      margin: 0 auto;
+      padding-left: 20px;
+      font-size: 1.1em;
+      line-height: 1.8em;
+    }
+
+    footer {
+      background-color: #0f0f1a;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      color: #bbbbbb;
+    }
+
+    a {
+      color: #80d0c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    a:hover {
+      color: #f9f871;
+      text-shadow: 0 0 5px rgba(255, 255, 0, 0.3);
+    }
+
+    .resume-container {
+      width: 90%;
+      height: 700px;
+      margin: 30px auto;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .resume-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .certificate-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header h1 {
+        font-size: 2em;
+      }
+
+      .contact-info {
+        padding-left: 0;
+      }
+    }
+  </style>
+  <script>
+    function showSection(sectionId) {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.style.display = "none");
+      document.getElementById(sectionId).style.display = "block";
+
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks.forEach(link => link.classList.remove("active"));
+      const activeLink = [...navLinks].find(link => link.textContent.toLowerCase() === sectionId);
+      if (activeLink) activeLink.classList.add("active");
+    }
+
+    function showCertificate(id) {
+      const certs = document.querySelectorAll(".certificate");
+      certs.forEach(cert => cert.classList.add("hidden"));
+      document.getElementById(id).classList.remove("hidden");
+    }
+
+    window.onload = () => {
+      const sections = document.querySelectorAll("section");
+      sections.forEach(section => section.style.display = "none");
+      document.getElementById("welcome").style.display = "block";
+      typeEffect();
+      const navLinks = document.querySelectorAll("nav a");
+      navLinks[0].classList.add("active");
+    };
+
+    const text = "Let's explore my work!";
+    let i = 0;
+    function typeEffect() {
+      const el = document.getElementById("typing-text");
+      if (i < text.length) {
+        el.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeEffect, 100);
+      }
+    }
+  </script>
+</head>
+<body>
+    <header>
+        <div class="welcome-center">Hello!</div>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Hi, I'm Samruddhi Jagdale, a 1st year software engineering student passionate about creativity in technology and AI.</p>
+      </header>
+    
+      <nav>
+        <a onclick="showSection(&#39;welcome&#39;)" class="active">Home</a>
+        <a onclick="showSection(&#39;about&#39;)">About</a>
+        <a onclick="showSection(&#39;projects&#39;)">Projects</a>
+        <a onclick="showSection(&#39;certificates&#39;)">Certificates</a>
+        <a onclick="showSection(&#39;contact&#39;)">Contact</a>
+        <a onclick="showSection(&#39;resume&#39;)">Resume</a>
+      </nav>
+    
+      <div class="container">
+        <section id="welcome" style="display: block;">
+          <div class="typing-text" id="typing-text">Let's explore my work!</div>
+        </section>
+    
+        <section id="about" style="display: none;">
+          <h2>About Me</h2>
+          <p>I'm an enthusiastic first-year B.Tech software engineering student with a strong foundation in C and Python programming. Passionate about solving real-world problems through code. Currently learning JavaScript and web development to broaden my skill set. I'm eager to grow as a developer and contribute to impactful projects.</p>
+        </section>
+    
+        <section id="projects" style="display: none;">
+          <h2>Projects</h2>
+          <div class="project">
+            <h3>Online Hospital Slot Booking</h3>
+            <p>A web application to book hospital slots online, improving accessibility and convenience for users.</p>
+          </div>
+          <div class="project">
+            <h3>Linux-Based Healthcare System</h3>
+            <p>A secure healthcare solution leveraging Linux for system-level control and stability.</p>
+          </div>
+        </section>
+    
+        <section id="certificates" style="display: none;">
+          <h2>My Certifications</h2>
+          <ul>
+            <li onclick="showCertificate(&#39;kali-cert&#39;)">Kali Linux - Simpli Learning</li>
+            <li onclick="showCertificate(&#39;linux-cert&#39;)">Linux - Great Learning</li>
+          </ul>
+          <div class="certificate-container">
+            <div class="certificate-card">
+              <img id="kali-cert" src="file:///C:/Users/samru/Downloads/kali-linux-cert.png" alt="Kali Linux Certificate" class="certificate hidden">
+            </div>
+            <div class="certificate-card">
+              <img id="linux-cert" src="file:///C:/Users/samru/Downloads/great%20linux%20cert.png" alt="Linux Certificate" class="certificate hidden">
+            </div>
+          </div>
+        </section>
+    
+        <section id="contact" style="display: none;">
+          <h2>Contact Me</h2>
+          <div class="contact-info">
+            <p>📧 <strong>Email:</strong> <a href="mailto:samruddhijagdale616@gmail.com">samruddhijagdale616@gmail.com</a></p>
+            <p>📞 <strong>Phone:</strong> +123 456 7890</p>
+            <p>🔗 <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/samruddhi-jagdale-b43832317" target="_blank">linkedin.com/in/samruddhijagdale</a></p>
+          </div>
+          <footer>
+            <p>© 2025 Samruddhi Jagdale | Contact: samruddhijagdale616@gmail.com</p>
+          </footer>
+        </section>
+    
+        <section id="resume" style="display: none;">
+          <h2>My Resume</h2>
+          <div class="resume-container">
+            <iframe src="./Index_files/preview.html"></iframe>
+          </div>
+        </section>
+      </div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+
+
+</body></html>
